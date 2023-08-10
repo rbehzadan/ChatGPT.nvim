@@ -87,6 +87,7 @@ local finder = function(opts)
           :new({
             command = "curl",
             args = {
+              "--socks5 127.0.0.1:9250",
               opts.url,
             },
             on_exit = vim.schedule_wrap(function(j, exit_code)
