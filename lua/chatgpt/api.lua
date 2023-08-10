@@ -27,7 +27,8 @@ function Api.chat_completions(custom_params, cb)
       "--silent",
       "--show-error",
       "--no-buffer",
-      "--socks5 127.0.0.1:9250",
+      "--socks5",
+      "127.0.0.1:9250",
       Api.CHAT_COMPLETIONS_URL,
       "-H",
       "Content-Type: application/json",
@@ -90,7 +91,8 @@ function Api.make_call(url, params, cb)
     :new({
       command = "curl",
       args = {
-        "--socks5 127.0.0.1:9250",
+        "--socks5",
+        "127.0.0.1:9250",
         url,
         "-H",
         "Content-Type: application/json",
